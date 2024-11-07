@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Apps</title>
+  <link rel="manifest" href="./app.webmanifest">
+  <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  <style>
+    /* Gaya untuk tautan "Skip to main content" */
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background-color: #007bff;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+
+    /* Menampilkan tautan saat difokuskan */
+    .skip-to-content:focus {
+      top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="#maincontent" class="skip-to-content">Skip to main content</a>
+    <nav-bar></nav-bar>
+  </header>
+  <section>
+    <hero-section class="hero-section"></hero-section>
+  </section>
+  <main id="maincontent">
+    <section>
+      <div class="search-content">
+        <input type="text" id="searchInput" placeholder="Search restaurants...">
+        <button id="searchButton">Search</button>
+        <div id="searchResults"></div>
+      </div>
+    </section>
+
+    <div id="mainContent">
+      <div id="likeButtonContainer"></div>
+    </div>
+  </main>
+  <footer>
+    <foot-bar></foot-bar>
+  </footer>
+  <script type="module" src="../scripts/index.js"></script>
+
+</body>
+
+</html>
