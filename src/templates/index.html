@@ -4,27 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AmbaFood - Temukan restoran terbaik dengan beragam menu lezat, ulasan terpercaya, dan rekomendasi untuk pengalaman kuliner yang tak terlupakan.">
   <title>Restaurant Apps</title>
+
   <link rel="manifest" href="./app.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
   <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
   <style>
-    /* Gaya untuk tautan "Skip to main content" */
-    .skip-to-content {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background-color: #007bff;
-      color: white;
-      padding: 8px 16px;
-      text-decoration: none;
-      z-index: 100;
-      transition: top 0.3s;
-    }
-
-    /* Menampilkan tautan saat difokuskan */
-    .skip-to-content:focus {
-      top: 10px;
-    }
   </style>
 </head>
 
@@ -36,7 +23,7 @@
   <section>
     <hero-section class="hero-section"></hero-section>
   </section>
-  <main id="maincontent">
+  <main id="maincontent" tabindex="0">
     <section>
       <div class="search-content">
         <input type="text" id="searchInput" placeholder="Search restaurants...">

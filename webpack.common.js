@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -62,14 +63,10 @@ module.exports = {
           },
         },
         {
-          urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
-          handler: 'CacheFirst',
+          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/small/<pictureId>'),
+          handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'images',
-            expiration: {
-              maxEntries: 50,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 hari
-            },
+            cacheName: 'Restaurant-image-api',
           },
         },
       ],

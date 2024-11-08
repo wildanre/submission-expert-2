@@ -34,7 +34,6 @@ const favorite = {
   },
 
   async afterRender() {
-    // No additional logic needed here, since the content is dynamically rendered
   },
 };
 

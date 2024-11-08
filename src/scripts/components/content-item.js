@@ -21,5 +21,4 @@ class ContentItem extends HTMLElement {
   }
 }
 
-// Mendaftarkan custom element
 customElements.define('content-item', ContentItem);

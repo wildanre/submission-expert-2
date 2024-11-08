@@ -14,7 +14,7 @@ const SearchBar = {
       if (event.key === 'Enter') {
         const query = searchInputBar.value.trim();
         if (query) {
-          window.location.hash = `#/search?q=${query}`;  // Merubah hash URL dan menuju ke halaman pencarian
+          window.location.hash = `#/search?q=${query}`;
         }
       }
     });

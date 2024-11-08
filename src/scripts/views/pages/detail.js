@@ -1,6 +1,5 @@
 import { getDetailOfRestaurant, addReview } from '../../data/restaurant-api';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -32,13 +31,13 @@ const Detail = {
             <div class="foods">
               <h4>Foods</h4>
               <ul>
-                ${restaurant.menus.foods.slice(0, 5).map((food) => `<li>${food.name}</li>`).join('')}
+                ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
               </ul>
             </div>
             <div class="drinks">
               <h4>Drinks</h4>
               <ul>
-                ${restaurant.menus.drinks.slice(0, 5).map((drink) => `<li>${drink.name}</li>`).join('')}
+                ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
               </ul>
             </div>
           </div>
@@ -85,7 +84,6 @@ const Detail = {
     const reviewFormContainer = document.getElementById('reviewFormContainer');
     const restaurant = await getDetailOfRestaurant(id);
 
-    // Periksa apakah restaurant.customerReviews adalah array
     if (Array.isArray(restaurant.customerReviews)) {
       const reviewsList = document.querySelector('.reviews');
       reviewsList.innerHTML = restaurant.customerReviews.map(
@@ -95,16 +93,14 @@ const Detail = {
       console.error('customerReviews bukan array');
     }
 
-    // Event listener untuk tombol "Tampilkan Review"
     showReviewsBtn.addEventListener('click', () => {
-      reviewsContainer.style.display = 'block'; // Menampilkan kontainer ulasan
-      reviewFormContainer.style.display = 'none'; // Menyembunyikan form review
+      reviewsContainer.style.display = 'block';
+      reviewFormContainer.style.display = 'none';
     });
 
-    // Event listener untuk tombol "Berikan Review"
     addReviewBtn.addEventListener('click', () => {
-      reviewsContainer.style.display = 'none'; // Menyembunyikan kontainer ulasan
-      reviewFormContainer.style.display = 'block'; // Menampilkan form review
+      reviewsContainer.style.display = 'none';
+      reviewFormContainer.style.display = 'block';
     });
 
     reviewForm.addEventListener('submit', async (event) => {
@@ -120,15 +116,13 @@ const Detail = {
         const reviewsList = document.querySelector('.reviews');
         reviewsList.innerHTML = updatedReviews.map(
           (review) => `<li><strong>${review.name}</strong>: ${review.review} <em>(${review.date})</em></li>`
-        ).join(''); // Menampilkan review yang baru
-
-        reviewForm.reset(); // Reset form setelah review dikirim
+        ).join('');
+        reviewForm.reset();
       } catch (error) {
         console.error('Failed to add review:', error);
       }
     });
 
-    // Inisialisasi tombol favorit
     const likeButtonContainer = document.getElementById('likeButtonContainer');
     LikeButtonInitiator.init({
       likeButtonContainer,

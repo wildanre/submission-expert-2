@@ -10,7 +10,7 @@ class NavBar extends HTMLElement {
         <ul class="nav-list">
           <li class="nav-item"><a href="/">Home</a></li>
           <li class="nav-item"><a href="#/favorites">Favorite</a></li>
-          <li class="nav-item"><a href="https://github.com/wildanre">About Us</a></li>
+          <li class="nav-item"><a href="https://github.com/wildanre" target="_blank" rel="noreferrer">>About Us</a></li>
         </ul>
       </nav>
     `;

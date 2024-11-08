@@ -16,11 +16,11 @@ const UrlParser = {
   },
 
   parseQuery() {
-    const queryString = window.location.hash.split('?')[1]; // Ambil query string setelah ?
+    const queryString = window.location.hash.split('?')[1];
     if (!queryString) return null;
 
     const params = new URLSearchParams(queryString);
-    return params.get('q'); // Mengambil parameter 'q' dari URL
+    return params.get('q');
   },
 
   _urlSplitter(url) {

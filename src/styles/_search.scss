@@ -1,4 +1,3 @@
-/* Tampilan konten pencarian */
 .search-content {
   padding: 20px;
   border-radius: 8px;
@@ -37,18 +36,15 @@
   background-color: #79634c;
 }
 
-/* Tampilan hasil search */
 #searchResults {
   padding: 20px;
   background-color: #ffffff00;
   border-radius: 8px;
 }
 
-/* Card restoran */
 .search_restaurant-card {
   display: flex;
   flex-direction: row;
-  /* Gambar di sebelah kiri, info di kanan */
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
@@ -56,10 +52,8 @@
   border-radius: 8px;
   background-color: #f9f9f9;
   gap: 1rem;
-  /* Jarak antar elemen */
 }
 
-/* Styling gambar restoran */
 .search_restaurant-card__image {
   flex: 0 0 auto;
 }
@@ -71,27 +65,22 @@
   border-radius: 5px;
 }
 
-/* Styling informasi restoran */
 .search_restaurant-card__info {
   flex-grow: 1;
   text-align: left;
-  /* Menjaga teks tetap kiri */
 }
 
-/* Nama restoran */
 .search_restaurant-name {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-/* Deskripsi restoran */
 .search_restaurant-description {
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
 
-/* Rating dan lokasi restoran */
 .search_restaurant-details {
   font-size: 0.9rem;
   margin-bottom: 10px;
@@ -131,32 +120,25 @@
 .search_restaurant-rating,
 .search_restaurant-location {
   display: flex;
-  align-items: center; /* Menjaga posisi icon dan teks sejajar */
+  align-items: center;
   gap: 0.5rem;
 }
 
-/* Media Query untuk perangkat dengan lebar layar lebih kecil (mobile) */
 @media (max-width: 600px) {
 
   .search_restaurant-card {
     flex-direction: column;
-    /* Gambar di atas, info di bawah pada perangkat mobile */
     align-items: center;
-    /* Menyejajarkan elemen di tengah */
   }
 
   .search_restaurant-card__image {
     margin-bottom: 1rem;
-    /* Memberi jarak antara gambar dan info */
   }
 
   .search_restaurant-image {
     width: 100%;
-    /* Gambar mengisi lebar layar */
     max-width: 100%;
-    /* Gambar tidak melebihi lebar 100% */
     height: auto;
-    /* Menjaga proporsi gambar */
   }
 
   .search_restaurant-name,
@@ -164,7 +146,6 @@
   .search_restaurant-rating,
   .search_restaurant-location {
     text-align: center;
-    /* Teks diratakan di tengah */
   }
 
   .search-content input,
@@ -175,6 +156,5 @@
 
   .search-content button {
     width: 100%;
-    /* Tombol mengisi lebar layar */
   }
 }

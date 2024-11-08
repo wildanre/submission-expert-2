@@ -18,7 +18,6 @@ class App {
   _initSearch() {
     const searchInput = document.getElementById('searchInput');
 
-    // event listener untuk pencarian real-time
     searchInput.addEventListener('keyup', async () => {
       const query = searchInput.value.trim();
       if (query) {
@@ -33,14 +32,11 @@ class App {
     });
   }
 
-  // Fungsi untuk menyembunyikan hasil pencarian ketika input kosong
   _hideSearchResults() {
     const searchResultsContainer = document.getElementById('searchResults');
     searchResultsContainer.style.display = 'none';
   }
 
-
-  // Fungsi untuk mengontrol visibilitas #searchResults
   toggleSearchResultsVisibility(results) {
     const searchResultsContainer = document.getElementById('searchResults');
 
@@ -55,6 +51,7 @@ class App {
   _displaySearchResults(results) {
     const searchResultsContainer = document.getElementById('searchResults');
     searchResultsContainer.innerHTML = '';
+
 
     if (results.error || results.founded === 0) {
       searchResultsContainer.innerHTML = '<p>No restaurants found.</p>';
@@ -87,9 +84,10 @@ class App {
       if (event.target && event.target.classList.contains('search_view-details-btn')) {
         const restaurantId = event.target.getAttribute('data-id');
         window.location.hash = `#/restaurant/${restaurantId}`;
+        const searchInput = document.getElementById('searchInput');
+        searchInput.value = '';
 
         searchResultsContainer.style.display = 'none';
-        searchInput.value = '';
       }
     });
   }
@@ -134,6 +132,13 @@ class App {
 
     this._content.innerHTML = await page.render(restaurantData);
     if (page.afterRender) await page.afterRender();
+
+    // Tambahkan skrip skip to content
+    const skipLinkElem = document.querySelector('.skip-to-content');
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.querySelector('#maincontent').focus();
+    });
   }
 }
 

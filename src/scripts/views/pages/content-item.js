@@ -2,10 +2,9 @@ import { getListOfRestaurants } from '../../data/restaurant-api';
 
 const ContentItem = {
   async render() {
-    // showLoading(); // Menampilkan indikator loading
 
     try {
-      const restaurantData = await getListOfRestaurants(); // Mendapatkan data restoran
+      const restaurantData = await getListOfRestaurants();
 
       return `
           <section class="content">
@@ -40,7 +39,6 @@ const ContentItem = {
   },
 
   async afterRender() {
-    // Logika tambahan setelah render jika diperlukan
   }
 };
 
